@@ -125,9 +125,9 @@ python main.py \
 
 Checkpoints are saved inside the run directory's `checkpoints/` subdirectory. EMA checkpoint names follow `ema_averaged_model_<step>.ckpt`, including `ema_averaged_model_250000.ckpt`.
 
-## 2. Generate images with the pretrained SteerFace generator
+## 2. Generate synthetic images
 
-Download the [250K generator](https://huggingface.co/datasets/LuxPolaris/SteerFace/blob/main/steerface_gen_model_250k.pth), [VAE encoder/decoder](https://drive.google.com/drive/folders/1d-zs3yjsnzOMNkz7qy3JSb-fMf0UmSdT?usp=sharing), and [precomputed 10K identity embeddings](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_emb.pth).
+To reuse our pretrained SteerFace generator, download the [250K generator](https://huggingface.co/datasets/LuxPolaris/SteerFace/blob/main/steerface_gen_model_250k.pth), [VAE encoder/decoder](https://drive.google.com/drive/folders/1d-zs3yjsnzOMNkz7qy3JSb-fMf0UmSdT?usp=sharing), and [precomputed 10K identity embeddings](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_emb.pth).
 
 From `generative_model_training/`:
 
@@ -159,7 +159,7 @@ outputs/steerface_samples/
 
 Completed identity folders are skipped when sampling resumes.
 
-## 3. Train an FR model on the released images
+## 3. Train FR model
 
 ### Download and extract the released synthetic dataset
 
@@ -219,7 +219,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
 
 Training runs for **32 epochs**, with learning-rate decay at epochs 22 and 28. Probabilistic random-resized-crop augmentation is controlled by `AdaFace_augment_prob` (default 0.2). When changing GPU count, update `WORLD_SIZE`, launch settings, and per-device batch size consistently.
 
-## 4. Evaluate the pretrained FR model
+## 4. Evaluation
 
 Download [steerface_fr_model.pth](https://huggingface.co/datasets/LuxPolaris/SteerFace/blob/main/steerface_fr_model.pth), our pretrained **IR-50** model.
 
