@@ -1,0 +1,12 @@
+torch
+torchvision
+opencv-python
+scikit-learn
+pyyaml
+protobuf==3.20.1
+tqdm
+scikit-image
+pandas
+tensorboard
+numpy<2
+Pillow

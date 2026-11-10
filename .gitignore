@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.log
+
+# Local data, weights, and experiment outputs
+data/
+dataset/
+checkpoints/
+ckpt/
+logs/
+outputs/
+wandb/
+*.ckpt
+*.pth
+*.pt
+*.npy
+*.npz
+

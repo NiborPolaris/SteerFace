@@ -1,0 +1,28 @@
+# @package _global_
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+root: ${hydra:runtime.cwd}
+model_config: ${root}/configs/model/unet_cond_ca_cpd25.yaml
+autoencoder:
+  config: ${root}/models/autoencoder/first_stage_config.yaml
+  encoder: ${root}/ckpt/autoencoder/first_stage_encoder_state_dict.pt
+  decoder: ${root}/ckpt/autoencoder/first_stage_decoder_state_dict.pt
+checkpoint:
+  path: ${root}/ckpt/steerface/steerface_gen_model_250k.pth
+sampling:
+  seed: 41
+  contexts_file: ${root}/../dataset/context_database/source_10k_emb.pth
+  context_key_index: 1
+  save_dir: ${root}/outputs/samples
+  batch_size: 50
+  n_contexts: 10000
+  n_samples_per_context: 50
+hydra:
+  output_subdir: null
+  job:
+    chdir: false
+  run:
+    dir: .
