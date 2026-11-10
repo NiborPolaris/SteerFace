@@ -25,8 +25,8 @@ This repository supports four workflows:
 | CASIA-WebFace dataset | [Kaggle](https://www.kaggle.com/datasets/debarghamitraroy/casia-webface) |
 | Released synthetic dataset | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/SteerFace/blob/main/steerface_gen_samples.tar.gz) |
 | Pretrained FR model | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/SteerFace/blob/main/steerface_fr_model.pth) |
-| 10K identity reference images | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_img.tar.gz) |
-| Embeddings of 10K references | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_emb.pth) |
+| 10K identity reference images | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_img.tar.gz) ([MorphFace](https://huggingface.co/datasets/LuxPolaris/MorphFace)) |
+| Embeddings of 10K references | [Hugging Face](https://huggingface.co/datasets/LuxPolaris/MorphFace/blob/main/source_10k_emb.pth) ([MorphFace](https://huggingface.co/datasets/LuxPolaris/MorphFace)) |
 | Pretrained ElasticFace backbone | [Google Drive](https://drive.google.com/drive/folders/1q3ws_BQLmgXyiy2msvHummXq4pRqc1rx) ([ElasticFace](https://github.com/fdbtrs/ElasticFace)) |
 
 
@@ -242,23 +242,15 @@ If you use this repository or resources from our papers, please cite us:
 
 ```bibtex
 @inproceedings{mi2026steerface,
-  author = {Mi, Yuxi and Yuan, Qiuyang and Xu, Jianqing and Zhou, Yichun and Zhao, Xuan and Wang, Jun and Guo, Rizen and Zhou, Shuigeng},
   title = {SteerFace: Debiasing Synthetic Face Generation via Adaptive Residue Perturbation},
-  year = {2026},
-  isbn = {9798400722134},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3767308.3835280},
-  doi = {10.1145/3767308.3835280},
+  author = {Mi, Yuxi and Yuan, Qiuyang and Xu, Jianqing and Zhou, Yichun and Zhao, Xuan and Wang, Jun and Guo, Rizen and Zhou, Shuigeng},
   booktitle = {Proceedings of the 34th ACM International Conference on Multimedia},
   pages = {7756--7765},
-  numpages = {10},
-  keywords = {face recognition, face image synthesis, diffusion model},
-  location = {Rio de Janeiro, Brazil},
-  series = {MM '26}
+  year = {2026},
+  doi = {10.1145/3767308.3835280}
 }
 
-@inproceedings{mi2025data,
+@inproceedings{mi2025morphface,
   title = {Data synthesis with diverse styles for face recognition via 3dmm-guided diffusion},
   author = {Mi, Yuxi and Zhong, Zhizhou and Huang, Yuge and Yuan, Qiuyang and Zhao, Xuan and Xu, Jianqing and Ding, Shouhong and Wang, Shaoming and Guo, Rizen and Zhou, Shuigeng},
   booktitle = {2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -270,4 +262,4 @@ If you use this repository or resources from our papers, please cite us:
 
 ## Acknowledgements
 
-Built on [IDiff-Face](https://github.com/fdbtrs/IDiff-Face), [ElasticFace](https://github.com/fdbtrs/ElasticFace), [TFace](https://github.com/Tencent/TFace), and [DCFace](https://github.com/mk-minchul/dcface). We thank the authors for sharing their code and resources.
+Built on [IDiff-Face](https://github.com/fdbtrs/IDiff-Face), [ElasticFace](https://github.com/fdbtrs/ElasticFace), [MorphFace](https://huggingface.co/datasets/LuxPolaris/MorphFace), [TFace](https://github.com/Tencent/TFace), and [DCFace](https://github.com/mk-minchul/dcface). We thank the authors for sharing their code and resources.
